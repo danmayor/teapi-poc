@@ -17,6 +17,8 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "@teapi-poc/data": "workspace:^"
+    "@teapi-poc/data": "workspace:^",
+    "mssql": "^11.0.1",
+    "typeorm": "^0.3.21"
   }
 }
