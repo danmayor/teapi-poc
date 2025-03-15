@@ -1,4 +1,4 @@
-import { Author, Book } from "@teapi-poc/data";
+import { Author, Book } from "@teapi-poc/data/src/models";
 import AuthorEntity from "./authorEntity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 

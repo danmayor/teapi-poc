@@ -1,7 +1,7 @@
-import Author from './author';
-import Book from './book';
+import * as Commands from './commands';
+import * as Models from './models';
 
-export type {
-    Author,
-    Book
+export {
+    Commands,
+    Models
 };

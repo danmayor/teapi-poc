@@ -1,6 +1,6 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, JoinTable } from 'typeorm';
-import { Author, Book } from '@teapi-poc/data';
 import BookEntity from './bookEntity';
+import { Author, Book } from '@teapi-poc/data/src/models';
 
 /**
  * Our persistence representation (Entity) of an author

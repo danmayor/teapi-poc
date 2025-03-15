@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
-import { registerAppDataService, seedBook } from './appDataSource';
+import { getDataSource, seedBook } from './appDataSource';
 import BookEntity from './entities/bookEntity';
+import registerAuthorEndpoints from './endpoints/authorEndpoint';
 
 /**
  * This is our async entry point for the entire application, it's verbose on the command line
@@ -10,7 +11,7 @@ import BookEntity from './entities/bookEntity';
     // App start, prepare database...
     console.log('Application startup...');
     console.log('- Preparing database...')
-    const dbCon = await registerAppDataService();
+    const dbCon = await getDataSource();
     await seedBook(dbCon);
 
     // Prepare host...
@@ -20,9 +21,8 @@ import BookEntity from './entities/bookEntity';
 
     // Register endpoints
     console.log('- Registering endpoints...')
-    app.get('/', async (_: Request, res: Response) => {
-        res.send('Hello world');
-    });
+    app.use(express.json());
+    registerAuthorEndpoints(app)
 
     // Launch app host and listen for traffic
     console.log('- Launching server...')
