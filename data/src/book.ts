@@ -7,7 +7,12 @@ export default interface Book {
     /**
      * Author of this book
      */
-    author: Author;
+    author?: Author;
+
+    /**
+     * Unique id of this books author
+     */
+    authorId: number;
 
     /**
      * Optional description of this book

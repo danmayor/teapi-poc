@@ -3,5 +3,8 @@
   "name": "@teapi-poc",
   "private": true,
   "version": "0.1.0",
-  "description": "Typescript Express API - Proof of concept"
+  "description": "Typescript Express API - Proof of concept",
+  "scripts": {
+    "start": "pnpm -w @teapi-poc/api start"
+  }
 }

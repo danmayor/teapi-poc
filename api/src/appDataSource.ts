@@ -34,10 +34,6 @@ export const seedBook = async (dbCon: DataSource): Promise<Book> => {
     const books = dbCon.getRepository(BookEntity)
         .createQueryBuilder('book_entity');
 
-        const bestBook = await books
-            .where("title = :title", { title: 'Best Book' })
-            .getOne();
-
     let author = await authors
         .where('displayName = :displayName', { displayName: 'Best Author' })
         .getOne();

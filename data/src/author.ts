@@ -17,5 +17,5 @@ export default interface Author {
     /**
      * Unique name of this author
      */
-    name: string;
+    displayName: string;
 };
